@@ -39,3 +39,21 @@ class AirplaneTicket(Document):
 		random_number = random.randint(1, 100)
 		random_letter = random.choice(string.ascii_uppercase[:5])  
 		self.seat = f"{random_number}{random_letter}"
+	
+	def before_save(self):
+		flight = self.flight
+		flight_doc = frappe.get_doc('Airplane Flight', flight)
+       
+		airplane = flight_doc.airplane
+		airplane_doc = frappe.get_doc('Airplane', airplane)
+
+		capacity = airplane_doc.capacity
+		total_tickets = self.total_tickets()
+
+		if total_tickets > capacity:
+			frappe.throw('Ticket exceeds airplane capacity')
+
+
+	def total_tickets(self):
+		total_tickets = frappe.get_all('Airplane Ticket', filters={'flight': self.flight})
+		return len(total_tickets)

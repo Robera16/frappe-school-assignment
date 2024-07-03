@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    {% set color = frappe.form_dict.get('color', 'black') %}
-    <div class="rectangle" style="background-color: {{ color }};"></div>
+    
+    <div class="rectangle" style="background-color: {{ frappe.form_dict.color or 'black' }};"></div>
 </body>
 </html>
