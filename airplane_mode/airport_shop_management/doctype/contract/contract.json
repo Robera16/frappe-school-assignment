@@ -1,0 +1,116 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:CON-{YYYY}-{tenant}-{##}",
+ "creation": "2024-07-08 16:27:21.723562",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "tenant_name",
+  "tenant_email",
+  "shop",
+  "shop_name",
+  "shop_number",
+  "rent_amount",
+  "column_break_gigm",
+  "start_date",
+  "end_date",
+  "section_break_m1yb",
+  "contract_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "label": "Tenant",
+   "options": "Tenant"
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop"
+  },
+  {
+   "fieldname": "rent_amount",
+   "fieldtype": "Currency",
+   "label": "Rent Amount"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "contract_details",
+   "fieldtype": "Text Editor",
+   "label": "Contract Details"
+  },
+  {
+   "fieldname": "column_break_gigm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_m1yb",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "tenant.name1",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Tenant Name"
+  },
+  {
+   "fetch_from": "tenant.email",
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "label": "Tenant Email"
+  },
+  {
+   "fetch_from": "shop.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Shop Name"
+  },
+  {
+   "fetch_from": "shop.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Shop Number"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-18 18:07:30.687244",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

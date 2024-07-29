@@ -1,0 +1,15 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<h1>{{ title }}</h1>
+<h2>Shop Details</h2>
+<ul>
+    <li>Airport: {{doc.airport}}</li>
+    <li>Location: {{doc.location}}</li>
+    <li>Shop Name: {{doc.shop_name}}</li>
+    <li>Shop Number: {{doc.shop_number}}</li>
+  
+</ul>
+{% endblock %}
+
+<!-- this is a sample default web page template -->

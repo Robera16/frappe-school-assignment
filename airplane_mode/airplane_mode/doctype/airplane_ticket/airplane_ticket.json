@@ -8,6 +8,7 @@
  "field_order": [
   "passenger",
   "status",
+  "gate_number",
   "column_break_fmhq",
   "flight",
   "seat",
@@ -156,12 +157,18 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fetch_from": "flight.gate_number",
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-07-03 15:24:36.821169",
+ "modified": "2024-07-29 08:02:44.701310",
  "modified_by": "Administrator",
  "module": "Airplane Mode",
  "name": "Airplane Ticket",

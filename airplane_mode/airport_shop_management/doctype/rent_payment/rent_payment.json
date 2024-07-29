@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:RP-{YYYY}-{##}",
+ "creation": "2024-07-08 16:37:05.458196",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract",
+  "payment_date",
+  "tenant_details_section",
+  "column_break_smde",
+  "tenant_name",
+  "tenant_email",
+  "shop_details_section",
+  "shop_name",
+  "shop_number",
+  "contract_details_section",
+  "start_date",
+  "end_date",
+  "section_break_hnzu",
+  "amount_paid"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Contract"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "fieldname": "amount_paid",
+   "fieldtype": "Currency",
+   "label": "Amount Paid"
+  },
+  {
+   "fieldname": "tenant_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Tenant Details"
+  },
+  {
+   "fetch_from": "contract.tenant_name",
+   "fieldname": "tenant_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Name"
+  },
+  {
+   "fetch_from": "contract.tenant_email",
+   "fieldname": "tenant_email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Email"
+  },
+  {
+   "fieldname": "shop_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Shop Details"
+  },
+  {
+   "fetch_from": "contract.shop_name",
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Name"
+  },
+  {
+   "fetch_from": "contract.shop_number",
+   "fieldname": "shop_number",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Number"
+  },
+  {
+   "fieldname": "section_break_hnzu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contract_details_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Contract Details"
+  },
+  {
+   "fetch_from": "contract.start_date",
+   "fieldname": "start_date",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Start Date"
+  },
+  {
+   "fetch_from": "contract.end_date",
+   "fieldname": "end_date",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "End Date"
+  },
+  {
+   "fieldname": "column_break_smde",
+   "fieldtype": "Column Break",
+   "hidden": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-07-29 08:41:21.303360",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Rent Payment",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

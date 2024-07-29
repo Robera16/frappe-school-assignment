@@ -1,0 +1,37 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-07-13 13:18:45.825978",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "default": "",
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "mandatory": 1,
+   "options": "Airport",
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letterhead": null,
+ "modified": "2024-07-14 13:01:19.509054",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Shop Count",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    airport AS \"Airport\", \n    COUNT(shop_name) AS \"Shop Count\",\n    COUNT(CASE WHEN status = 'Available' THEN 1 END) AS \"Available Shops\",\n    COUNT(CASE WHEN status = 'Occupied' THEN 1 END) AS \"Occupied Shops\"\nFROM \n    `tabShop`\nWHERE\n    airport = %(airport)s\nGROUP BY \n    airport\nORDER BY \n    COUNT(shop_name) DESC;\n",
+ "ref_doctype": "Shop",
+ "report_name": "Shop Count",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
